@@ -51,22 +51,15 @@ const Navbar = () => {
             <ul className="flex items-center gap-4 text-sm">
               <p>{session.user.name}</p>
               <div className="flex  justify-center items-center">
-                <Avatar size="sm">
-                  <Avatar.Image
-                    alt="John Doe"
-                    src={session?.user.image}
-                    referrerPolicy="no-referrer"
-                  />
-                  
-                </Avatar>
-                {/* <Image
+                
+                <Image
                   className="rounded-full"
                   src={session?.user.image}
                   height={30}
                   width={30}
                   alt="ok"
                   referrerPolicy="no-referrer"
-                ></Image> */}
+                ></Image>
               </div>
 
               <Button onClick={habdlesignout} variant="outline">
