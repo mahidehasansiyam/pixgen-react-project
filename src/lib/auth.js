@@ -6,8 +6,16 @@ const client = new MongoClient(process.env.MDB_URL);
 const db = client.db('pixgen');
 
 export const auth = betterAuth({
+  emailAndPassword: {
+    enabled: true,
+  },
+  socialProviders: {
+    google: {
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    },
+  },
   database: mongodbAdapter(db, {
-   
     client,
   }),
 });

@@ -1,8 +1,16 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
+import { authClient } from '@/lib/auth-client';
+import { BiUser } from 'react-icons/bi';
 
 const Navbar = () => {
+
+
+  const { data: session } = authClient.useSession();
+  console.log(session?.user.name,session?.user.image);
+
+
   return (
     <div className="border-b px-2">
       <nav className=" flex justify-between items-center  py-3 max-w-7xl mx-auto w-full">
@@ -33,16 +41,34 @@ const Navbar = () => {
           </li>
         </ul>
 
-        <div className="flex ">
-          <ul className="flex items-center gap-4 text-sm">
-            <li>
-              <Link href={'/regester'}>SignUp</Link>
-            </li>
-            <li>
-              <Link href={'/login'}>Login</Link>
-            </li>
-          </ul>
-        </div>
+        {session ? (
+          <div className="flex items-center">
+            <ul className="flex items-center gap-4 text-sm">
+              <p>{session.user.name}</p>
+              <div className="flex  justify-center items-center">
+                <Image
+                  className="rounded-full"
+                  src={session?.user.image}
+                  height={30}
+                  width={30}
+                  alt="ok"
+                ></Image>
+              </div>
+
+              <li>
+                <Link href={'/login'}>Login</Link>
+              </li>
+            </ul>
+          </div>
+        ) : (
+          <div className="flex ">
+            <ul className="flex items-center gap-4 text-sm">
+              <li>
+                <Link href={'/regester'}>Regestration</Link>
+              </li>
+            </ul>
+          </div>
+        )}
       </nav>
     </div>
   );
