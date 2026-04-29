@@ -10,7 +10,7 @@ const ProfilePage = () => {
 
   return (
     <div>
-      <Avatar>
+      {/* <Avatar>
         <Avatar.Image
           alt="oh"
           src={session?.user.image}
@@ -21,7 +21,7 @@ const ProfilePage = () => {
           </Avatar.Fallback>
         </Avatar.Image>
       </Avatar>
-      <div>{session?.user.email}</div>
+      <div>{session?.user.email}</div> */}
       <ProfileModal></ProfileModal>
     </div>
   );
