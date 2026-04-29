@@ -57,6 +57,7 @@ const Navbar = () => {
                   height={30}
                   width={30}
                   alt="ok"
+                  referrerPolicy='no-referrer'
                 ></Image>
               </div>
 
