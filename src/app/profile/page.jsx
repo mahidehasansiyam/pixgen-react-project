@@ -10,18 +10,18 @@ const ProfilePage = () => {
 
   return (
     <div>
-      {/* <Avatar>
+      <Avatar>
         <Avatar.Image
           alt="oh"
           src={session?.user.image}
           referrerPolicy="no-referrer"
         >
           <Avatar.Fallback>
-            {session?.user?.name ? session.user.name[0] : 'U'}
-          </Avatar.Fallback>
+            {session?.user?.name.charAt(0).toUpperCase()}
+          </Avatar.Fallback> 
         </Avatar.Image>
       </Avatar>
-      <div>{session?.user.email}</div> */}
+      <div>{session?.user.email}</div>
       <ProfileModal></ProfileModal>
     </div>
   );
