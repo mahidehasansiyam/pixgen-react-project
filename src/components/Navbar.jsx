@@ -3,8 +3,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { authClient } from '@/lib/auth-client';
 import { BiUser } from 'react-icons/bi';
+import { Button } from '@heroui/react';
 
 const Navbar = () => {
+
+  const habdlesignout =async () => {
+    await authClient.signOut();
+  }
 
 
   const { data: session } = authClient.useSession();
@@ -55,9 +60,7 @@ const Navbar = () => {
                 ></Image>
               </div>
 
-              <li>
-                <Link href={'/login'}>Login</Link>
-              </li>
+             <Button onClick={habdlesignout} variant='outline'>SignOut</Button>
             </ul>
           </div>
         ) : (
@@ -65,6 +68,9 @@ const Navbar = () => {
             <ul className="flex items-center gap-4 text-sm">
               <li>
                 <Link href={'/regester'}>Regestration</Link>
+              </li>
+              <li>
+                <Link href={'/login'}>Login</Link>
               </li>
             </ul>
           </div>
