@@ -16,7 +16,9 @@ const ProfilePage = () => {
           src={session?.user.image}
           referrerPolicy="no-referrer"
         >
-          <Avatar.Fallback>{session?.user.name[0]}</Avatar.Fallback>
+          <Avatar.Fallback>
+            {session?.user?.name ? session.user.name[0] : 'U'}
+          </Avatar.Fallback>
         </Avatar.Image>
       </Avatar>
       <div>{session?.user.email}</div>

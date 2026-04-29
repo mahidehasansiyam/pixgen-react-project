@@ -14,10 +14,10 @@ const ProfileModal = () => {
     await authClient.updateUser({
     image,
     name
-})
+   })
 
 
-    console.log(name,image);
+    // console.log(name,image);
   }
 
   return (
