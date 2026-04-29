@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const Banner = () => {
   return (
-    <div className="bg-[url('https://i.pinimg.com/1200x/8a/fe/83/8afe83b98f339de4c1dd34fde26a86d0.jpg')] h-[60vh] w-full bg-cover bg-no-repeat bg-center flex items-center rounded-lg shadow-2xl">
+    <div className="mt-5 bg-[url('https://i.pinimg.com/1200x/8a/fe/83/8afe83b98f339de4c1dd34fde26a86d0.jpg')] h-[60vh] w-full bg-cover bg-no-repeat bg-center flex items-center rounded-lg shadow-2xl">
       {/* Overlay */}
       <div className="w-full h-full rounded-lg bg-black/50 flex items-center ">
         <div className="max-w-7xl mx-auto px-6 text-white">
@@ -16,7 +16,7 @@ const Banner = () => {
 
           <div className="flex gap-4">
             <Link href="#">
-              <Button className="bg-linear-to-r from-pink-500 via-purple-500 bg-red-500">
+              <Button className="bg-linear-to-r from-pink-500 via-purple-500 bg-red-500 ">
                 Generate Now
               </Button>
             </Link>
