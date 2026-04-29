@@ -10,9 +10,9 @@ const ProfilePage = () => {
 
   return (
     <div className="flex justify-center items-center h-[80vh]">
-      <div className=" bg-gray-100 p-8 rounded-2xl flex flex-col gap-3 text-center">
-        <div className='flex justify-center items-center'>
-          <Avatar>
+      <div className="  shadow-2xl p-8 rounded-2xl flex flex-col gap-3 text-center">
+        <div className="flex justify-center items-center">
+          <Avatar className="h-20 w-20">
             <Avatar.Image
               alt="oh"
               src={session?.user.image}
@@ -24,8 +24,11 @@ const ProfilePage = () => {
             </Avatar.Image>
           </Avatar>
         </div>
-        <div>{session?.user.email}</div>
-        <ProfileModal></ProfileModal>
+        <h2 className="text-xl font-bold">{session?.user.name}</h2>
+        <p className="text-muted">{session?.user.email}</p>
+        <div className="">
+          <ProfileModal></ProfileModal>
+        </div>
       </div>
     </div>
   );
