@@ -57,22 +57,29 @@ const Navbar = () => {
                   height={30}
                   width={30}
                   alt="ok"
-                  referrerPolicy='no-referrer'
+                  referrerPolicy="no-referrer"
                 ></Image>
               </div>
 
-             <Button onClick={habdlesignout} variant='outline'>SignOut</Button>
+              <Button onClick={habdlesignout} variant="outline">
+                SignOut
+              </Button>
             </ul>
           </div>
         ) : (
           <div className="flex ">
             <ul className="flex items-center gap-4 text-sm">
-              <li>
-                <Link href={'/regester'}>Regestration</Link>
-              </li>
-              <li>
-                <Link href={'/login'}>Login</Link>
-              </li>
+              
+                <Button variant='outline'>
+                  {' '}
+                  <Link href={'/regester'}>Regestration</Link>
+                </Button>
+                <Button variant='outline'>
+                  {' '}
+                  <Link href={'/login'}>Login</Link>
+                </Button>
+              
+              
             </ul>
           </div>
         )}
