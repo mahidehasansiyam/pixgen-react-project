@@ -1,25 +1,29 @@
-import { getAllCategory, getAllData } from '@/data/page';
-import Banner from '../components/Banner';
 import ShowCategory from '@/components/ShowCategory';
 import ShowPhotos from '@/components/ShowPhotos';
+import { getAllCategory, getAllData } from '@/data/page';
+import React from 'react';
 
-export default async function Home() {
+const AllPhotos =async () => {
+
   const allData = await getAllData();
   // console.log(allData);
-
+  
   const allCategory = await           getAllCategory();  
-  // console.log(allCategory);
+    // console.log(allCategory);
+
 
   return (
     <div className="max-w-7xl mx-auto">
-      <Banner></Banner>
-
-     
-
       <div>
-        <h2 className="mt-4">Tpo Generations</h2>
-        <div className='grid grid-cols-4 gap-4'>
-          {allData.slice(0, 8).map(photo => {
+        <h2>Categories</h2>
+        <div className="">
+          <ShowCategory allCategory={allCategory}></ShowCategory>
+        </div>
+      </div>
+
+      <div className="mt-5">
+        <div className="grid grid-cols-4 gap-4">
+          {allData.map(photo => {
             return (
               <div key={photo.id} className="">
                 <ShowPhotos photo={photo}></ShowPhotos>
@@ -30,4 +34,6 @@ export default async function Home() {
       </div>
     </div>
   );
-}
+};
+
+export default AllPhotos;
