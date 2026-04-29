@@ -13,7 +13,7 @@ const Navbar = () => {
 
 
   const { data: session } = authClient.useSession();
-  console.log(session?.user.name,session?.user.image);
+  // console.log(session?.user.name,session?.user.image);
 
 
   return (
